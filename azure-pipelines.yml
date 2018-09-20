@@ -12,6 +12,9 @@ variables:
 steps:
 - script: |
     dotnet build --configuration $(buildConfiguration)
+    dotnet publish --output $(Build.ArtifactStagingDirectory)
+
+- task: PublishbuildArtifacts@1
 
 - task: DotNetCoreCLI@2
   inputs:
